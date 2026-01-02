@@ -1,0 +1,50 @@
+.mood-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.mood-option {
+    cursor: pointer;
+}
+
+.mood-option input[type="radio"] {
+    display: none;
+}
+
+.mood-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--color-bg-tertiary);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.mood-option input[type="radio"]:checked+.mood-card {
+    border-color: var(--color-primary);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.mood-card:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-2px);
+}
+
+.mood-emoji {
+    font-size: var(--font-size-2xl);
+}
+
+.mood-label {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+    .mood-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,117 @@
+.thoughts-controls {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.mood-filter {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.thoughts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.thought-card {
+    transition: all var(--transition-base);
+}
+
+.thought-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thought-mood-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+}
+
+.thought-mood-emoji {
+    font-size: var(--font-size-lg);
+}
+
+.thought-mood-label {
+    font-weight: 500;
+}
+
+.thought-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.thought-date {
+    white-space: nowrap;
+}
+
+.thought-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin: 0;
+}
+
+.thought-content {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .thoughts-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mood-filter {
+        flex-wrap: wrap;
+    }
+
+    .mood-filter .btn {
+        flex: 1;
+    }
+
+    .thought-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .thought-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,81 @@
+.water-content {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: var(--spacing-xl);
+}
+
+.water-progress-circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.water-progress-text {
+    position: absolute;
+    text-align: center;
+}
+
+.water-progress-percentage {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.water-progress-label {
+    margin-top: var(--spacing-xs);
+}
+
+.water-quick-add h4 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.water-quick-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.water-quick-btn {
+    justify-content: center;
+    font-weight: 600;
+}
+
+.water-goal-editor {
+    display: flex;
+    justify-content: center;
+}
+
+.water-goal-form {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.water-goal-form .input {
+    flex: 1;
+}
+
+.water-achievement {
+    text-align: center;
+}
+
+.water-achievement .badge {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+    .water-content {
+        grid-template-columns: 1fr;
+    }
+}
