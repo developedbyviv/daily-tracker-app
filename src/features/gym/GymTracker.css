@@ -1,0 +1,211 @@
+/* Gym Tracker Styles */
+
+.gym-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-lg);
+}
+
+.gym-add-card {
+    height: fit-content;
+}
+
+.gym-quick-add {
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gym-quick-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.gym-quick-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 88, 12, 0.1));
+    border-color: var(--color-warning);
+}
+
+.gym-quick-btn:hover {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.gym-custom-add {
+    padding-top: var(--spacing-lg);
+}
+
+.gym-custom-form {
+    animation: fadeIn 0.3s ease;
+}
+
+.gym-form-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.gym-form-actions .btn {
+    flex: 1;
+}
+
+.gym-achievement {
+    text-align: center;
+}
+
+.gym-achievement .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    animation: bounceIn 0.5s ease;
+}
+
+/* Recent Sessions */
+.gym-history-card {
+    max-height: 600px;
+}
+
+.gym-sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: var(--spacing-xs);
+}
+
+.gym-sessions-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.gym-sessions-list::-webkit-scrollbar-track {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+}
+
+.gym-sessions-list::-webkit-scrollbar-thumb {
+    background: var(--color-warning);
+    border-radius: var(--radius-full);
+}
+
+.gym-session-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.gym-session-item:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-warning);
+    transform: translateX(4px);
+}
+
+.gym-session-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    flex-shrink: 0;
+}
+
+.gym-session-details {
+    flex: 1;
+}
+
+.gym-session-date {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.gym-session-duration {
+    font-size: 0.875rem;
+    color: var(--color-warning);
+    font-weight: 500;
+}
+
+.gym-session-notes {
+    margin-top: var(--spacing-xs);
+    font-style: italic;
+}
+
+.gym-session-delete {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: var(--color-danger);
+}
+
+.gym-session-item:hover .gym-session-delete {
+    opacity: 1;
+}
+
+.gym-session-delete:hover {
+    background: var(--color-danger);
+    color: white;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .gym-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .gym-quick-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .gym-form-actions {
+        flex-direction: column;
+    }
+}

@@ -1,4 +1,4 @@
-import { Wallet, Droplet, Cigarette, Moon, BookOpen, TrendingUp } from 'lucide-react';
+import { Wallet, Droplet, Cigarette, Moon, BookOpen, TrendingUp, Dumbbell } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import StatCard from './StatCard';
@@ -7,6 +7,7 @@ import useWater from '../features/water/useWater';
 import useSmoking from '../features/smoking/useSmoking';
 import useSleep from '../features/sleep/useSleep';
 import useThoughts from '../features/thoughts/useThoughts';
+import useGym from '../features/gym/useGym';
 import { formatCurrency } from '../utils/helpers';
 import './StatCard.css';
 import './Dashboard.css';
@@ -17,6 +18,7 @@ export default function Dashboard() {
     const { todayCount } = useSmoking();
     const { getAverageSleep, sleepEntries } = useSleep();
     const { thoughts } = useThoughts();
+    const { totalSessions, currentStreak } = useGym();
 
     const totalExpenses = getTotalExpenses();
     const averageSleep = getAverageSleep();
@@ -53,12 +55,19 @@ export default function Dashboard() {
                 />
             </div>
 
-            <div className="grid grid-cols-2 mt-lg">
+            <div className="grid grid-cols-3 mt-lg">
                 <StatCard
                     title="Average Sleep"
                     value={`${averageSleep.toFixed(1)}h`}
                     subtitle={`from ${sleepEntries.length} entries`}
                     icon={Moon}
+                />
+                <StatCard
+                    title="Gym Sessions"
+                    value={totalSessions}
+                    subtitle={currentStreak > 0 ? `${currentStreak} day streak 🔥` : "all time"}
+                    icon={Dumbbell}
+                    color="warning"
                 />
                 <StatCard
                     title="Journal Entries"
@@ -110,6 +119,14 @@ export default function Dashboard() {
                         <div>
                             <div className="action-title">Write Thought</div>
                             <div className="action-subtitle text-sm text-muted">Journal entry</div>
+                        </div>
+                    </Link>
+
+                    <Link to="/gym" className="action-card">
+                        <Dumbbell size={24} />
+                        <div>
+                            <div className="action-title">Log Workout</div>
+                            <div className="action-subtitle text-sm text-muted">Track gym session</div>
                         </div>
                     </Link>
 

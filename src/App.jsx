@@ -6,6 +6,7 @@ import WaterTracker from './features/water/WaterTracker';
 import SmokingTracker from './features/smoking/SmokingTracker';
 import SleepTracker from './features/sleep/SleepTracker';
 import ThoughtsJournal from './features/thoughts/ThoughtsJournal';
+import GymTracker from './features/gym/GymTracker';
 import './components/Layout.css';
 import './components/Modal.css';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="smoking" element={<SmokingTracker />} />
           <Route path="sleep" element={<SleepTracker />} />
           <Route path="thoughts" element={<ThoughtsJournal />} />
+          <Route path="gym" element={<GymTracker />} />
         </Route>
       </Routes>
     </BrowserRouter>

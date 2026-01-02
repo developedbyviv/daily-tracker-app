@@ -6,6 +6,7 @@ const STORAGE_KEYS = {
     SMOKING: 'personalJournal_smoking',
     SLEEP: 'personalJournal_sleep',
     THOUGHTS: 'personalJournal_thoughts',
+    GYM: 'personalJournal_gym',
 };
 
 export const storage = {
