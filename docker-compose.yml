@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  frontend: 
+    image: developedbyviv/daily-tracker-app:${IMAGE_TAG}
+    container_name: daily-tracker-app
+    ports:
+      - "3000:80"
+    restart: always
